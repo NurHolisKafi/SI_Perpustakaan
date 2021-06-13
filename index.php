@@ -23,9 +23,11 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
        //$auth = new authModel();
 
-        if ($aksi == 'proses') {
+        if ($aksi == 'HalamanAwal') { 
+            require_once("View/auth/HalamanAwal.php");
+        }else if ($aksi == 'proses') {
             require_once("View/auth/loginAdmin.php");
-         } else if ($aksi == 'loginAnggota') {
+        } else if ($aksi == 'loginAnggota') {
             //$auth->index();
             require_once("View/auth/loginAnggota.php");
          } else if ($aksi == 'daftarbuku') {
@@ -37,5 +39,5 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             echo "Page Not Found";
     }
 } else {
-    header("location: index.php?page=View&aksi=proses"); //Jangan ada spasi habis location
+    header("location: index.php?page=View&aksi=HalamanAwal"); //Jangan ada spasi habis location
 }
