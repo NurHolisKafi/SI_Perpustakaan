@@ -32,10 +32,10 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             require_once("View/auth/loginAnggota.php");
         } 
     
-    } else if ($page == "admin"){
+    } else if ($page == "buku"){
         $buku = new bukuModel();
         if ($aksi == 'daftarbuku') {
-            $buku->index();
+            $buku->daftarbuku();
             //require_once("View/buku/daftarbuku.php");
         }
     }else {

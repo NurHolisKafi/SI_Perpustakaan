@@ -12,7 +12,7 @@ class bukuModel{
         return $hasil;
     }
 
-    public function index(){
+    public function daftarbuku(){
         $data=$this->getdaftarbuku();
         extract($data);
         require_once("View/buku/daftarbuku.php");
