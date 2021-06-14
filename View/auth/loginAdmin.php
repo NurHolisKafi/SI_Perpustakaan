@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Login Admin</title>
-	<link rel="stylesheet" href="assets/css/latihan7.css">
+	<link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body style="background-image: url('assets/image/bg15.png')">
     <form action="index.php?page=View&aksi=loginAdmin" method="post">

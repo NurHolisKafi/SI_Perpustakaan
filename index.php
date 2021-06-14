@@ -19,25 +19,28 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     $page = $_GET['page']; // Berisi nama page
     $aksi = $_GET['aksi']; // Aksi Dari setiap page
     
-    if ($page == "View") {
+    if ($page == "auth") {
 
        //$auth = new authModel();
 
         if ($aksi == 'HalamanAwal') { 
             require_once("View/auth/HalamanAwal.php");
-        }else if ($aksi == 'proses') {
+        }else if ($aksi == 'loginAdmin') {
             require_once("View/auth/loginAdmin.php");
         } else if ($aksi == 'loginAnggota') {
             //$auth->index();
             require_once("View/auth/loginAnggota.php");
-         } else if ($aksi == 'daftarbuku') {
-             //$auth->index();
-             require_once("View/buku/daftarbuku.php");
-         }
+        } 
     
-    } else {
+    } else if ($page == "admin"){
+        $buku = new bukuModel();
+        if ($aksi == 'daftarbuku') {
+            $buku->index();
+            //require_once("View/buku/daftarbuku.php");
+        }
+    }else {
             echo "Page Not Found";
     }
 } else {
-    header("location: index.php?page=View&aksi=HalamanAwal"); //Jangan ada spasi habis location
+    header("location: index.php?page=auth&aksi=HalamanAwal"); //Jangan ada spasi habis location
 }

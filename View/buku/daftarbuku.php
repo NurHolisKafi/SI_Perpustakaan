@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<a class=" btn btn-primary " href="index.php?page=View&aksi=proses">kembali</a>
+<a class=" btn btn-primary " href="index.php?page=auth&aksi=loginAdmin">kembali</a>
     <center>
         <div class="container">
             <div class="card mt-5">
@@ -29,12 +29,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        $no=1;
+                        foreach($data as $row) :?>
                             <tr>
-                                <td>1</td>
-                                <td>BUMI</td>
-                                <td>Gava Media</td>
-                                <td>Tere liye</td>
+                                <td><?=$no ?></td>
+                                <td><?=$row['judul_buku'] ?></td>
+                                <td><?=$row['nama_penerbit'] ?></td>
+                                <td><?=$row['pengarang'] ?></td>
                             </tr>
+                        <?php $no++;
+                        endforeach;?>
                         </tbody>
                     </table>
                 </div>
