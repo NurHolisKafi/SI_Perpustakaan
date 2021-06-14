@@ -39,7 +39,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             //require_once("View/buku/daftarbuku.php");
         }
     }else {
-            echo "Page Not Found";
+            echo "Halaman Tidak Ditemukan";
     }
 } else {
     header("location: index.php?page=auth&aksi=HalamanAwal"); //Jangan ada spasi habis location
