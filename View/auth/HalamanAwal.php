@@ -6,6 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        body {
+            
+            background: url("assets/image/bg2.png");
+            background-size: cover;
+        }
+        .btn {
+            width: 320px;
+	        height: 50px;
+            font-size: 20px;
+            color: #ff6435;
+            font-weight: bold;
+	        border-radius: 25px;
+            background-color: #170f15;
+        }
+
+        .container .card {
+            background: transparent;
+            outline-width: 0px;
+            outline: transparent;
+            
+        }
+
+        h2 {
+            color: #ff6435;
+        }
+    </style>
     <title>Login</title>
 </head>
 
@@ -19,9 +46,9 @@
 
                 </div>
                 <div class="card-body">
-                    <a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-primary">Login Admin</a>
-                    <a href="index.php?page=auth&aksi=loginAnggota" class="btn btn-dark">Login Anggota</a>
-                    <a href="index.php?page=auth&aksi=daftarPraktikan" class="btn btn-success">Daftar Anggota</a>
+                    <br><a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-light">Login Admin</a></br>
+                    <br><a href="index.php?page=auth&aksi=loginAnggota" class="btn btn-light">Login Anggota</a></br>
+                    <br><a href="index.php?page=auth&aksi=daftarPraktikan" class="btn btn-light">Daftar Anggota</a></br>
                 </div>
             </div>
         </div>

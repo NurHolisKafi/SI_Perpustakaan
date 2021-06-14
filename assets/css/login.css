@@ -22,7 +22,7 @@ body {
 .box h2 {
 	margin: 0 0 30px;
 	padding: 0;
-	color: #fff;
+	color: #ff6435;
 	text-align: center;
 }
 
@@ -50,7 +50,7 @@ body {
 	letter-spacing: 1px;
 	padding: 10px 0;
 	font-size: 16px;
-	color: #fff;
+	color: #ff6435;
 	pointer-events: none;
 	transition: .5s;
 }
@@ -58,45 +58,29 @@ body {
 .box .InputBox input:focus ~ label, .box .InputBox input:valid ~ label{
 	top: -18px;
 	left: 0;
-	color: #03a9f4;
+	color: #ff6435;
 	font-size: 12px;
 }
 
-.box .InputBox input[type="submit"] {
-	background: transparent;
-	border: none;
-	outline: none;
-	color: #fff;
-	background: #03a9f4;
-	padding: 10px 20px;
-	cursor: pointer;
-	border-radius: 5px;
-}
+.judul {
 
-a {
-	background: transparent;
-	border: none;
-	outline: none;
-	color: #fff;
-	background: #03a9f4;
-	padding: 10px 20px;
-	cursor: pointer;
-	border-radius: 5px;
-	display: flex;
-	justify-content: center;
-	text-decoration: none;
-	font-size: 20px;
-	font-weight: bold;
-}
-
-a:hover {
-	color: #000;
-}
-
-h1 {
 	text-align: center;
-	color: #fff;
-	font-size: 50px;
-	margin-top: 80px;
+	color: #ff6435;
+	font-size: 40px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-top: 50px; 
 	margin-left: 5px;
+}
+
+.btn {
+
+	background: transparent;
+	width: 320px;
+	height: 50px;
+	font-size: 14px;
+	color: #ff6435;
+	font-weight: bold;
+	border-radius: 10px;
+	background-color: #170f15;
 }

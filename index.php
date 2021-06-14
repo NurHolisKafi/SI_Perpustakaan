@@ -38,6 +38,18 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             $buku->daftarbuku();
             //require_once("View/buku/daftarbuku.php");
         }
+    }else if ($page == "view"){
+        //$buku = new bukuModel();
+        if ($aksi == 'admin') {
+            //$buku->daftarbuku();
+            require_once("View/admin/admin.php");
+        }
+    }else if ($page == "daftar"){
+        //$buku = new bukuModel();
+        if ($aksi == 'daftarAnggota') {
+            //$buku->daftarbuku();
+            require_once("View/daftarAnggota/daftar.php");
+        }
     }else {
             echo "Halaman Tidak Ditemukan";
     }
