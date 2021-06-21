@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <title>Data Peminjam</title>
+    <title>Daftar Buku</title>
+    <link rel="stylesheet" href="assets\css\bootstrap.min.css">
     <style>
         body {
             
@@ -14,8 +14,9 @@
             background-size: cover;
         }
         .btn {
-            color: #ff6435;
-            background-color: #170f15;
+            color: #fff;
+            font-size: 14px;
+            margin-right: 5px; 
         }
 
         .container .card {
@@ -45,45 +46,44 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=tambah">Tambah Buku</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=view">Lihat Buku</a>
                 </li>
             </ul>  
         </div>   
         <div class="form-inline">
-            <a class="btn btn-dark mr-5" href="index.php?page=auth&aksi=HalamanAwal">Logout</a>
+            <a class=" btn btn-danger" href="index.php?page=auth&aksi=loginAdmin">Logout</a>
         </div>
         
     </nav>
-                        
+
     <center>
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Daftar Peminjam Buku</h2>
+                    <h2>Daftar Buku</h2>
                 </div>
                 <div class="card-body">
-
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th class= "label">No.</th>
-                                <th class= "label">Nama</th>
-                                <th class= "label">No Telp</th>
-                                <th class= "label">Alamat</th>
-                                <th class= "label">Buku Yang Dipinjam</th>
+                                <td class="label">No</td>
+                                <td class="label">Judul</td>
+                                <td class="label">Penerbit</td>
+                                <td class="label">Pengarang</td>
+                                <td class="label">Pilih</td>
                             </tr>
                         </thead>
                         <tbody>
+                        <?php
+                        $no=1;
+                        foreach($data as $row) :?>
                             <tr>
-                                <td class= "label">1</td>
-                                <td class= "label">Alexander Bambang</td>
-                                <td class= "label">812345678</td>
-                                <td class= "label">Surabaya</td>
-                                <td class= "label"><a href="#" class="btn btn-outline-dark">Lihat</a></td>
+                                <td class="label"><?=$no ?></td>
+                                <td class="label"><?=$row['judul_buku'] ?></td>
+                                <td class="label"><?=$row['nama_penerbit'] ?></td>
+                                <td class="label"><?=$row['pengarang'] ?></td>                                
                             </tr>
+                        <?php $no++;
+                        endforeach;?>
                         </tbody>
                     </table>
                 </div>
@@ -95,5 +95,4 @@
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.css"></script>
 </body>
-
 </html>

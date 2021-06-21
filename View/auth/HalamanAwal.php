@@ -9,7 +9,7 @@
     <style>
         body {
             
-            background: url("assets/image/bg2.png");
+            background-image: url("assets/image/bg2.png");
             background-size: cover;
         }
         .btn {
@@ -33,7 +33,7 @@
             color: #ff6435;
         }
     </style>
-    <title>Login</title>
+    <title>Halaman Awal</title>
 </head>
 
 <body>
@@ -48,7 +48,7 @@
                 <div class="card-body">
                     <br><a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-light">Login Admin</a></br>
                     <br><a href="index.php?page=auth&aksi=loginAnggota" class="btn btn-light">Login Anggota</a></br>
-                    <br><a href="index.php?page=auth&aksi=daftarPraktikan" class="btn btn-light">Daftar Anggota</a></br>
+                    <br><a href="index.php?page=daftar&aksi=daftarAnggota" class="btn btn-light">Daftar Anggota</a></br>
                 </div>
             </div>
         </div>

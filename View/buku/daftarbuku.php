@@ -7,11 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Buku</title>
     <link rel="stylesheet" href="assets\css\bootstrap.min.css">
-    <link rel="stylesheet" href="assets\css\style.css">
+    <style>
+        body {
+            
+            background: url("assets/image/bg2.png");
+            background-size: cover;
+        }
+        .btn {
+            color: #fff;
+            font-size: 14px;
+            margin-right: 5px; 
+        }
+
+        .container .card {
+            background: transparent;
+            outline-width: 0px;
+            outline: transparent;
+            color: #ff6435;  
+        }
+        .label{
+            color: #ff6435; 
+        }
+
+        .nav{
+            font-size: 20px;
+            margin-left: 10px;
+            color: #ff6435; 
+        }
+    </style>
 </head>
 
 <body>
-<a class=" btn btn-primary " href="index.php?page=auth&aksi=loginAdmin">kembali</a>
+    <nav class="navbar navbar-expand-lg navbar-red bg-dark">
+        <a class="navbar-brand nav" href="#">Perpustakaan | </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link label" href="index.php?page=anggota&aksi=edit">Edit Profil</a>
+                </li>
+            </ul>  
+        </div>   
+        <div class="form-inline">
+            <a class=" btn btn-danger" href="index.php?page=auth&aksi=loginAnggota">Logout</a>
+        </div>
+        
+    </nav>
+
     <center>
         <div class="container">
             <div class="card mt-5">
@@ -22,10 +66,11 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <td>No</td>
-                                <td>Judul</td>
-                                <td>Penerbit</td>
-                                <td>Pengarang</td>
+                                <td class="label">No</td>
+                                <td class="label">Judul</td>
+                                <td class="label">Penerbit</td>
+                                <td class="label">Pengarang</td>
+                                <td class="label">Pilih</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,10 +78,15 @@
                         $no=1;
                         foreach($data as $row) :?>
                             <tr>
-                                <td><?=$no ?></td>
-                                <td><?=$row['judul_buku'] ?></td>
-                                <td><?=$row['nama_penerbit'] ?></td>
-                                <td><?=$row['pengarang'] ?></td>
+                                <td class="label"><?=$no ?></td>
+                                <td class="label"><?=$row['judul_buku'] ?></td>
+                                <td class="label"><?=$row['nama_penerbit'] ?></td>
+                                <td class="label"><?=$row['pengarang'] ?></td>
+                                <td>
+                                    <button type="submit" class="btn btn-success btn-lg btn-block ">Pinjam</button>
+                                    <button type="submit" class="btn btn-danger btn-lg btn-block">Batal</button>
+                                </td>
+                                
                             </tr>
                         <?php $no++;
                         endforeach;?>

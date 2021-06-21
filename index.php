@@ -31,18 +31,29 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             //$auth->index();
             require_once("View/auth/loginAnggota.php");
         } 
-    
+    } else if ($page == "anggota"){
+        //$anggota = new anggotaModel();
+        if ($aksi == 'pinjambuku') {
+            //$buku->daftarbuku();
+            require_once("View/buku/daftarbuku");
+        }else if($aksi == 'edit'){
+            require_once("View/Anggota/edit.php");
+        }
     } else if ($page == "buku"){
         $buku = new bukuModel();
         if ($aksi == 'daftarbuku') {
             $buku->daftarbuku();
             //require_once("View/buku/daftarbuku.php");
         }
-    }else if ($page == "view"){
+    }else if ($page == "admin"){
         //$buku = new bukuModel();
-        if ($aksi == 'admin') {
+        if ($aksi == 'daftarpeminjam') {
             //$buku->daftarbuku();
             require_once("View/admin/admin.php");
+        } else if ($aksi == 'view') {
+            require_once("View/buku/daftarbuku.php");
+        } else if ($aksi == 'tambah') {
+            require_once("View/admin/tambahbuku.php");
         }
     }else if ($page == "daftar"){
         //$buku = new bukuModel();

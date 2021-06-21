@@ -14,9 +14,9 @@
             background-size: cover;
         }
         .btn {
-            margin-top: 10px;
-            margin-left: 150px;
-            width: 320px;
+            margin-top: 15px;
+            margin-left:17%;
+            width: 25%;
 	        height: 50px;
             font-size: 20px;
             color: #ff6435;
@@ -78,7 +78,7 @@
                     </div>
                     
                     <button type="submit" class="btn btn-dark btn-lg btn-block">Daftar</button>
-                    <a href="#" class="btn btn-dark btn-lg btn-block">Kembali</a>
+                    <a href="index.php?page=auth&aksi=HalamanAwal" class="btn btn-dark btn-lg btn-block">Kembali</a>
                 </form>
             </div>
         </div>
