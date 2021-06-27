@@ -46,11 +46,12 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
+                    <a class="nav-link label" href="index.php?page=admin&aksi=daftarpeminjam">Kembali</a>
                 </li>
             </ul>  
         </div>   
         <div class="form-inline">
-            <a class=" btn btn-danger" href="index.php?page=auth&aksi=loginAdmin">Logout</a>
+            <a class=" btn btn-danger" href="index.php?page=auth&aksi=logout">Logout</a>
         </div>
         
     </nav>
@@ -69,7 +70,6 @@
                                 <td class="label">Judul</td>
                                 <td class="label">Penerbit</td>
                                 <td class="label">Pengarang</td>
-                                <td class="label">Pilih</td>
                             </tr>
                         </thead>
                         <tbody>

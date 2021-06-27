@@ -51,7 +51,7 @@
                 <h2>Tambah Buku</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=admin&aksi=tambah" method="POST">
+                <form action="index.php?page=admin&aksi=cekTambahBuku" method="POST">
                     <div class="form-group">
                         <label class="label">Judul Buku : </label>
                         <input type="text" class="form-control" name="judul_buku">

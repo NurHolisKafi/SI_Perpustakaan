@@ -25,7 +25,7 @@
 </head>
 
 <body style="background-image: url('assets/image/bg2.png')">
-    <form action="index.php?page=admin&aksi=daftarpeminjam" method="POST">
+    <form action="index.php?page=auth&aksi=authAdmin" method="POST">
 	<h1 class="judul">Login Admin</h1>
 	<div class="box">
 		<h2>Login</h2>

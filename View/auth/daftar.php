@@ -51,7 +51,7 @@
                 <h2>Daftar Anggota</h2>
             </div>
             <div class="card-body">
-                <form action="#" method="POST">
+                <form action="index.php?page=auth&aksi=inputAnggota" method="POST">
                     <div class="form-group">
                         <label class="label">Nama : </label>
                         <input type="text" class="form-control" name="nama">

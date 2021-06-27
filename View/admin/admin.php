@@ -45,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=tambah">Tambah Buku</a>
+                    <a class="nav-link label" href="index.php?page=admin&aksi=tambahbuku">Tambah Buku</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link label" href="index.php?page=admin&aksi=view">Lihat Buku</a>
@@ -53,7 +53,7 @@
             </ul>  
         </div>   
         <div class="form-inline">
-            <a class="btn btn-dark mr-5" href="index.php?page=auth&aksi=HalamanAwal">Logout</a>
+            <a class="btn btn-dark mr-5" href="index.php?page=auth&aksi=logout">Logout</a>
         </div>
         
     </nav>

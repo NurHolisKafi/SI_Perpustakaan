@@ -20,50 +20,70 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     $aksi = $_GET['aksi']; // Aksi Dari setiap page
     
     if ($page == "auth") {
-
-       //$auth = new authModel();
-
+       $auth = new authModel();
         if ($aksi == 'HalamanAwal') { 
-            require_once("View/auth/HalamanAwal.php");
+            $auth->index();
         }else if ($aksi == 'loginAdmin') {
-            require_once("View/auth/loginAdmin.php");
+            $auth->loginAdmin();
         } else if ($aksi == 'loginAnggota') {
-            //$auth->index();
-            require_once("View/auth/loginAnggota.php");
-        } 
+            $auth->loginAnggota();
+        }else if ($aksi == 'authAnggota'){
+            $auth->authAnggota();
+        }else if($aksi == 'authAdmin'){
+            $auth->authAdmin();
+        } else if ($aksi == 'logout') {
+            $auth->logout();
+        } else if ($aksi == 'daftarAnggota') {
+           $auth->daftarAnggota();
+        } else if ($aksi == 'inputAnggota') {
+            $auth->inputAnggota();
+        } else {
+            echo "Method Not Found";
+        }
+
+
     } else if ($page == "anggota"){
-        //$anggota = new anggotaModel();
-        if ($aksi == 'pinjambuku') {
-            //$buku->daftarbuku();
-            require_once("View/buku/daftarbuku");
-        }else if($aksi == 'edit'){
-            require_once("View/Anggota/edit.php");
+        if($_SESSION['role'] == 'anggota'){
+            $anggota = new anggotaModel();
+            if ($aksi == 'pinjambuku') {
+                $anggota->daftarbuku();
+            }else if($aksi == 'edit'){
+                require_once("View/Anggota/edit.php");
+            }
+        }else{
+            header("location:index.php?page=auth&aksi=loginAnggota");
         }
-    } else if ($page == "buku"){
-        $buku = new bukuModel();
-        if ($aksi == 'daftarbuku') {
-            $buku->daftarbuku();
-            //require_once("View/buku/daftarbuku.php");
-        }
+
+
     }else if ($page == "admin"){
-        //$buku = new bukuModel();
-        if ($aksi == 'daftarpeminjam') {
-            //$buku->daftarbuku();
-            require_once("View/admin/admin.php");
-        } else if ($aksi == 'view') {
-            require_once("View/buku/daftarbuku.php");
-        } else if ($aksi == 'tambah') {
-            require_once("View/admin/tambahbuku.php");
-        }
+        if($_SESSION['role']=='admin'){
+            $admin = new adminModel();
+            if ($aksi == 'daftarpeminjam') {
+                $admin->daftarPeminjam();
+            } else if ($aksi == 'view') {
+                $admin->daftarbuku();
+            } else if ($aksi == 'tambahbuku') {
+                $admin->tambah();
+            }else if ($aksi == 'cekTambahBuku'){
+                $admin->cekTambahBuku();
+            }
+        }else{
+            header("location:index.php?page=auth&aksi=loginAdmin");
+        }    
+        
+
+
     }else if ($page == "daftar"){
         //$buku = new bukuModel();
         if ($aksi == 'daftarAnggota') {
             //$buku->daftarbuku();
-            require_once("View/daftarAnggota/daftar.php");
+            require_once("View/auth/daftar.php");
         }
     }else {
             echo "Halaman Tidak Ditemukan";
     }
+
+
 } else {
     header("location: index.php?page=auth&aksi=HalamanAwal"); //Jangan ada spasi habis location
 }

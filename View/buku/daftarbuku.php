@@ -51,7 +51,7 @@
             </ul>  
         </div>   
         <div class="form-inline">
-            <a class=" btn btn-danger" href="index.php?page=auth&aksi=loginAnggota">Logout</a>
+            <a class=" btn btn-danger" href="index.php?page=auth&aksi=logout">Logout</a>
         </div>
         
     </nav>

@@ -81,7 +81,7 @@
                     </div>
                     
                     <button type="submit" class="btn btn-dark btn-lg btn-block">Simpan</button>
-                    <a href="index.php?page=buku&aksi=daftarbuku" class="btn btn-drak float-right">Kembali</a>
+                    <a href="index.php?page=anggota&aksi=pinjambuku" class="btn btn-drak float-right">Kembali</a>
                 </form>
             </div>
         </div>

@@ -25,7 +25,7 @@
 </head>
 
 <body style="background-image: url('assets/image/bg2.png')">
-    <form action="index.php?page=buku&aksi=daftarbuku" method="POST">
+    <form action="index.php?page=auth&aksi=authAnggota" method="POST">
 	<h1 class="judul">Login Anggota</h1>
 	<div class="box">
 		<h2>Login</h2>
