@@ -34,16 +34,6 @@
             margin-left: 10px;
             color: #ff6435; 
         }
-        .cari{
-            position: absolute;
-            margin-left: 73%;
-        }
-        .bar{
-            position: absolute;
-            margin-left: 55%;
-            height: 36px;
-
-        }
     </style>
 </head>
 
@@ -55,8 +45,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li>
-                    <a href="index.php?page=admin&aksi=daftarpeminjam" class="btn btn-dark btn-lg btn-block label">Kembali</a>
+                <li class="nav-item active">
+                    <a class="nav-link label" href="index.php?page=admin&aksi=daftarpeminjam">kembali</a>
                 </li>
             </ul>  
         </div>   
@@ -70,50 +60,32 @@
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Daftar Buku</h2>
-                 </div>
-                <div class="row">
-                <div class="col-sm-4">
-                <form role="cari" action="index.php?page=admin&aksi=cari" method="GET">
-                <div class="form-group">
-                    <label></label>
-                <td><input class="bar" type="text" name="judul_buku" class="form-control"></td> 
-                <td>
-                    <button type="submit" class="btn btn-success btn-block cari">Search</button>
-                </td>    
+                    <h2>Daftar Penerbit</h2>
                 </div>
-                
-                </form> 
-                </div>
-            </div>
-            <br>
                 <div class="card-body">
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <td class="label">No</td>
-                                <td class="label">Judul</td>
-                                <td class="label">Penerbit</td>
-                                <td class="label">Pengarang</td>
+                                <td class="label">ID</td>
+                                <td class="label">Nama Penerbit</td>
+                                <td class="label">Tahun Terbit</td>
                                 <td class="label">Pilih</td>
                             </tr>
                         </thead>
                         <tbody>
                         <?php
                         $no=1;
-
                         foreach($data as $row) :?>
                             <tr>
                                 <td class="label"><?=$no ?></td>
-                                <td class="label"><?=$row['judul_buku'] ?></td>
                                 <td class="label"><?=$row['nama_penerbit'] ?></td>
-                                <td class="label"><?=$row['pengarang'] ?></td>
+                                <td class="label"><?=$row['tahun_terbit'] ?></td>
                                 <td>
-                                    <a href="index.php?page=admin&aksi=cekEditBuku">
-                                        <button type="submit" class="btn btn-success btn-lg btn-block">Edit</button>
-                                    </a>                                    
+                                    <a class=" btn btn-success" href="index.php?page=admin&aksi=tambahpenerbit">Tambah</a>
+                                    <a class=" btn btn-success" href="index.php?page=admin&aksi=editpenerbit">Edit</a>
                                     <button type="submit" class="btn btn-danger btn-lg btn-block">Hapus</button>
-                                </td>                                
+                                </td>
+                                
                             </tr>
                         <?php $no++;
                         endforeach;?>

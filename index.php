@@ -66,6 +66,23 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
                 $admin->tambah();
             }else if ($aksi == 'cekTambahBuku'){
                 $admin->cekTambahBuku();
+            }else if ($aksi == 'cekEditBuku'){
+                $admin->edit();
+            }
+            else if ($aksi == 'cari'){
+                $admin->cari();
+            }
+            else if ($aksi == 'lihatpinjambuku'){
+                //$admin->cari();
+                require_once("View/admin/lihatpeminjambuku.php");
+            }else if ($aksi == 'daftarpenerbit'){
+                $admin->daftarpenerbit();
+            }else if ($aksi == 'editpenerbit'){
+                //$admin->daftarpenerbit();
+                require_once("View/admin/editpenerbit.php");
+            }else if ($aksi == 'tambahpenerbit'){
+                //$admin->daftarpenerbit();
+                require_once("View/admin/tambahpenerbit.php");
             }
         }else{
             header("location:index.php?page=auth&aksi=loginAdmin");

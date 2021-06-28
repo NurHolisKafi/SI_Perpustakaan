@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <title>Data Peminjam</title>
+    <title>Buku yang di Peminjam</title>
     <style>
         body {
             
@@ -15,7 +15,7 @@
         }
         .btn {
             color: #ff6435;
-            background-color: #170f15;
+            background-color: #170f15; 
         }
 
         .container .card {
@@ -45,13 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=tambahbuku">Tambah Buku</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=view">Lihat Buku</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=daftarpenerbit">Lihat Penerbit</a>
+                    <a href="index.php?page=admin&aksi=daftarpeminjam" class="btn btn-outline-dark">Kembali</a>
                 </li>
             </ul>  
         </div>   
@@ -65,7 +59,7 @@
         <div class="container">
             <div class="card mt-5">
                 <div class=" card-header">
-                    <h2>Daftar Peminjam Buku</h2>
+                    <h2>Daftar Buku Yang Di Pinjam</h2>
                 </div>
                 <div class="card-body">
 
@@ -73,20 +67,14 @@
                         <thead>
                             <tr>
                                 <th class= "label">No.</th>
-                                <th class= "label">Nama</th>
-                                <th class= "label">No Telp</th>
-                                <th class= "label">Alamat</th>
-                                <th class= "label">Buku Yang Dipinjam</th>
+                                <th class= "label">Judul Buku</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class= "label">1</td>
-                                <td class= "label">Alexander Bambang</td>
-                                <td class= "label">812345678</td>
-                                <td class= "label">Surabaya</td>
-                                <td class= "label"><a href="index.php?page=admin&aksi=lihatpinjambuku" class="btn btn-outline-dark">Lihat</a></td>
-                            </tr>
+                                <td class= "label">1.</td>
+                                <td class= "label">BUMI</td>  
+                            </tr>                            
                         </tbody>
                     </table>
                 </div>
