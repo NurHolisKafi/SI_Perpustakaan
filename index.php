@@ -55,6 +55,9 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
                 $anggota->daftarPetugas();
             }else if($aksi == 'cari'){
                 $anggota->cariBuku();
+            }else if($aksi == 'lihatpinjambuku'){
+                //$anggota->lihatpinjambuku();
+                require_once("View/Anggota/lihatpinjambuku.php");
             }else {
                 echo "Method Not Found";
             }

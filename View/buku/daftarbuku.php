@@ -58,6 +58,9 @@
                 <li class="nav-item active">
                     <a class="nav-link label" href="index.php?page=anggota&aksi=editProfile">Edit Profil</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link label" href="index.php?page=anggota&aksi=lihatpinjambuku">Lihat Buku Yang Dipinjam</a>
+                </li>
             </ul>  
         </div>   
         <div class="form-inline">

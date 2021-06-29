@@ -45,7 +45,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a href="index.php?page=admin&aksi=daftarpeminjam" class="btn btn-outline-dark">Kembali</a>
+                    <a href="index.php?page=anggota&aksi=pinjambuku" class="btn btn-outline-dark">Kembali</a>
                 </li>
             </ul>  
         </div>   
@@ -79,7 +79,7 @@
                             foreach($data as $row) : ?>
                             <tr>
                                 <td class= "label"><?=$no ?></td>
-                                <td class= "label"><?=$row ['judul_buku'] ?></td>  
+                                <td class= "label"><?=$row ['judul_buku'] ?></td> 
                                 <td class= "label">13-01-2021</td>
                                 <td class= "label">20-01-2021</td>
                                 <td class= "label">Perpustakaan A</td>
