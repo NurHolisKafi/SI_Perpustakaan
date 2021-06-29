@@ -139,7 +139,11 @@ class adminModel{
         if($this->prosesDeleteBuku($id_buku)){
             header("location:index.php?page=admin&aksi=viewBuku&pesan=Berhasil");
         }else{
-            header("location:index.php?page=admin&aksi=viewBuku&pesan=Gagal");
+            echo "<script type='text/javascript'>
+            alert('Buku Tidak Bisa Dihapus Karena Sedang Di Pinjam');
+            window.location='index.php?page=admin&aksi=viewBuku';
+            </script>";
+            //header("location:index.php?page=admin&aksi=viewBuku&pesan=Gagal");
         }
     }
 
@@ -208,7 +212,11 @@ class adminModel{
             extract($data);
             require_once("View/buku/daftarbukuAdmin.php");
         }else{
-            header("location:index.php?page=admin&aksi=viewBuku&pesan=Buku Tidak Ada");
+            echo "<script type='text/javascript'>
+            alert('Buku Yang Anda Cari Tidak Ada');
+            window.location='index.php?page=admin&aksi=viewBuku';
+            </script>";
+            //header("location:index.php?page=admin&aksi=viewBuku&pesan=Buku Tidak Ada");
         }
         
     }

@@ -51,6 +51,10 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
                 $anggota->editProfile();
             }else if($aksi == 'cekEditProfile'){
                 $anggota->cekEditProfile();
+            }else if($aksi == 'pinjam'){
+                $anggota->daftarPetugas();
+            }else if($aksi == 'cari'){
+                $anggota->cariBuku();
             }else {
                 echo "Method Not Found";
             }

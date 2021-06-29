@@ -34,6 +34,16 @@
             margin-left: 10px;
             color: #ff6435; 
         }
+        .cari{
+            position: absolute;
+            margin-left: 73%;
+            margin-bottom: 10px;
+        }
+        .bar{
+            position: absolute;
+            margin-left: 55%;
+            height: 36px;
+        }
     </style>
 </head>
 
@@ -62,6 +72,20 @@
                 <div class=" card-header">
                     <h2>Daftar Buku</h2>
                 </div>
+                <div class="row">
+                <div class="col-sm-4">
+                <form role="cari" action="index.php?page=anggota&aksi=cari" method="POST">
+                <div class="form-group">
+                    <label></label>
+                <td><input class="bar" type="text" name="judul_buku" class="form-control"></td> 
+                <td>
+                    <button type="submit" class="btn btn-success btn-block cari">Search</button>
+                </td>    
+                </div>
+                <br>
+                </form> 
+                </div>
+                </div>
                 <div class="card-body">
                     <table class="table table-striped table-bordered">
                         <thead>
@@ -83,7 +107,10 @@
                                 <td class="label"><?=$row['nama_penerbit'] ?></td>
                                 <td class="label"><?=$row['pengarang'] ?></td>
                                 <td>
-                                    <button type="submit" class="btn btn-success btn-lg btn-block ">Pinjam</button>
+                                    <a href="index.php?page=anggota&aksi=pinjam">
+                                        <button type="submit" class="btn btn-success btn-lg btn-block ">Pinjam</button>
+                                    </a>
+                                    
                                     <button type="submit" class="btn btn-danger btn-lg btn-block">Batal</button>
                                 </td>
                                 

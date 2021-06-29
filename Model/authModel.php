@@ -32,7 +32,11 @@ class authModel{
             $_SESSION['admin']=$data;
             header("location:index.php?page=admin&aksi=daftarpeminjam&pesan=Berhasil");
         }else{
-            header("location:index.php?page=auth&aksi=loginAdmin&pesan=Gagal Login");
+            echo "<script type='text/javascript'>
+            alert('Username atau Password Anda Salah');
+            window.location='index.php?page=auth&aksi=loginAdmin';
+            </script>";
+            //header("location:index.php?page=auth&aksi=loginAdmin&pesan=Gagal Login");
         }
     }
 
@@ -51,7 +55,11 @@ class authModel{
             $_SESSION['anggota']=$data;
             header("location:index.php?page=anggota&aksi=pinjambuku&pesan=Berhasil");
         }else{
-            header("location:index.php?page=auth&aksi=loginAnggota&pesan=Gagal Login");
+            echo "<script type='text/javascript'>
+            alert('Username atau Password Anda Salah');
+            window.location='index.php?page=auth&aksi=loginAnggota';
+            </script>";
+            //header("location:index.php?page=auth&aksi=loginAnggota&pesan=Gagal Login");
         }
     }
 

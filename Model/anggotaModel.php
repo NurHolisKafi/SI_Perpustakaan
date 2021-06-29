@@ -60,6 +60,47 @@ class anggotaModel{
         }
     }
 
+    public function getDaftarPetugas(){
+        $sql = " SELECT nama FROM petugas";
+        $query = koneksi()->query($sql);
+        $hasil = [];
+        while($data = $query->fetch_assoc()){
+            $hasil[] = $data;
+        }
+        return $hasil;
+    }
+
+    public function daftarPetugas(){
+        $data=$this->getDaftarPetugas();
+        extract($data);
+        require_once("View/Anggota/pinjam.php");
+    }
+
+    public function prosescari($judul_buku){
+        $sql = "SELECT * FROM view_buku WHERE judul_buku LIKE '$judul_buku%'";
+        $query = koneksi()->query($sql);
+        $hasil = [];
+        while($data = $query->fetch_assoc()){
+            $hasil[] = $data;
+        }
+        return $hasil;
+    }
+    
+    public function cariBuku(){
+        $judul = $_POST['judul_buku'];
+        $data = $this->prosescari($judul);
+        if($data){
+            extract($data);
+            require_once("View/buku/daftarbuku.php");
+        }else{
+            echo "<script type='text/javascript'>
+            alert('Buku Yang Anda Cari Tidak Ada');
+            window.location='index.php?page=anggota&aksi=pinjambuku';
+            </script>";
+            //header("location:index.php?page=admin&aksi=viewBuku&pesan=Buku Tidak Ada");
+        }
+        
+    }
 }
 // $tes = new anggotaModel;
 // var_export($tes->get(2));

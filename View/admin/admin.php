@@ -76,6 +76,8 @@
                                 <th class= "label">Nama</th>
                                 <th class= "label">No Telp</th>
                                 <th class= "label">Alamat</th>
+                                <th class= "label">Tanggal Peminjaman</th>
+                                <th class= "label">Tanggal Pengembalian</th>
                                 <th class= "label">Buku Yang Dipinjam</th>
                             </tr>
                         </thead>
@@ -88,6 +90,8 @@
                                 <td class= "label"><?=$row ['nama'] ?></td>
                                 <td class= "label"><?=$row ['no_telp']?></td>
                                 <td class= "label"><?=$row ['alamat']?></td>
+                                <td class= "label">Tanggal Peminjaman</td>
+                                <td class= "label">Tanggal Pengembalian</td>
                                 <td class= "label"><a href="index.php?page=admin&aksi=lihatpinjambuku&id_anggota=<?=$row ['id_anggota'] ?>" class="btn btn-outline-dark">Lihat</a></td>
                             </tr>
                             <?php $no++;
