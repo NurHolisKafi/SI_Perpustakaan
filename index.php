@@ -78,7 +78,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
                 $admin->cekEditBuku();
             }else if ($aksi == 'deleteBuku'){
                 $admin->deleteBuku();
-            }else if ($aksi == 'tambahPenerbit'){
+            }else if ($aksi == 'tambahpenerbit'){
                 $admin->tambahpenerbit();
             }else if ($aksi == 'cekTambahPenerbit'){
                 $admin->cekTambahPenerbit();
