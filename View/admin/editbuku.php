@@ -51,7 +51,7 @@
                 <h2>Edit Buku</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=admin&aksi=cekEditBuku" method="POST">
+                <form action="index.php?page=admin&aksi=cekEditBuku&id_buku=<?=$_GET['id_buku']?>" method="POST">
                     <div class="form-group">
                         <label class="label">Judul Buku : </label>
                         <input type="text" class="form-control" name="judul_buku">
@@ -66,7 +66,7 @@
                     </div>
                     
                     <button type="submit" class="btn btn-dark btn-lg btn-block">Edit</button>
-                    <a href="index.php?page=admin&aksi=view" class="btn btn-dark btn-lg btn-block">Kembali</a>
+                    <a href="index.php?page=admin&aksi=viewBuku" class="btn btn-dark btn-lg btn-block">Kembali</a>
                 </form>
             </div>
         </div>

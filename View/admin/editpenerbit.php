@@ -51,7 +51,7 @@
                 <h2>Edit Penerbit</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=admin&aksi=editpenerbit" method="POST">
+                <form action="index.php?page=admin&aksi=cekEditPenerbit&id_penerbit=<?=$_GET['id_penerbit'] ?>" method="POST">
                     <div class="form-group">
                         <label class="label">Nama Penerbit : </label>
                         <input type="text" class="form-control" name="nama_penerbit">

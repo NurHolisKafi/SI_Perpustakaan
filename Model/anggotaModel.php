@@ -5,6 +5,19 @@ class anggotaModel{
         require_once("View/auth/loginAnggota.php");
     }
 
+    public function get($id)
+    {
+        $sql = "SELECT * FROM anggota WHERE id_anggota = $id";
+        $query = koneksi()->query($sql);
+        return $query->fetch_assoc();
+    }
+
+    public function editProfile(){
+        $id = $_SESSION['anggota']['id_anggota'];
+        $data = $this->get($id);
+        require_once("View/Anggota/edit.php");
+    }
+
     //Untuk meminjam Buku
     public function getdaftarbuku(){
         $sql = "select * from view_buku";
@@ -21,7 +34,33 @@ class anggotaModel{
         extract($data);
         require_once("View/buku/daftarbuku.php");
     }
+
+
+
+    public function prosesEdit($nama, $jenis_kelamin, $tanggal_lahir, $alamat, $password, $no_telp,$id){
+        $sql = "update anggota set nama='$nama', jenis_kelamin='$jenis_kelamin', 
+        tanggal_lahir='$tanggal_lahir', alamat='$alamat', password='$password', no_telp='$no_telp'
+        WHERE id_anggota='$id'";
+        return koneksi()->query($sql);
+    }
+
+    public function cekEditProfile(){
+        $id = $_POST['id'];
+        $nama = $_POST['nama'];
+        $jenis_kelamin = $_POST['jenis_kelamin'];
+        $tanggal_lahir = $_POST['anggal_lahir'];
+        $alamat = $_POST['alamat'];
+        $password = $_POST['password'];
+        $no_telp = $_POST['no_telp'];
+        $data = $this->prosesEdit($nama, $jenis_kelamin, $tanggal_lahir, $alamat, $password, $no_telp,$id);
+        if($data){
+            header("location:index.php?page=auth&aksi=HalamanAwal&pesan=Berhasil");
+        }else{
+            header("location:index.php?page=auth&aksi=daftarAnggota&pesan=Gagal");
+        }
+    }
+
 }
 // $tes = new anggotaModel;
-// var_export($tes->ceklogin('Michael','123'));
+// var_export($tes->get(2));
 // die;

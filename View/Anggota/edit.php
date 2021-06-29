@@ -52,32 +52,32 @@
                 <h2>Edit Profil</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=anggota&aksi=update" method="POST">
+                <form action="index.php?page=anggota&aksi=cekEditProfile" method="POST">
                     <!-- Diganti saat modul 3 -->
-                    <input type="hidden" name="id" value="#">
+                    <input type="hidden" name="id" value="<?=$data['id_anggota']?>">
                     <div class="form-group">
                         <label class="label" for="">Nama</label>
-                        <input type="text" name="nama" class="form-control" value="#">
+                        <input type="text" name="nama" class="form-control" value="<?=$data['nama']?>">
                     </div>
                     <div class="form-group">
                         <label class="label" for="">Jenis Kelamin</label>
-                        <input type="text" name="jenis_kelamin" class="form-control" value="#">
+                        <input type="text" name="jenis_kelamin" class="form-control" value="<?=$data['jenis_kelamin']?>">
                     </div>
                     <div class="form-group">
                         <label class="label" for="">Tanggal Lahir</label>
-                        <input type="text" name="tanggal_lahir" class="form-control" value="#">
+                        <input type="text" name="tanggal_lahir" class="form-control" value="<?=$data['tanggal_lahir']?>">
                     </div>
                     <div class="form-group">
                         <label class="label" for="">No.Telp</label>
-                        <input type="text" name="no_telp" class="form-control" value="#">
+                        <input type="text" name="no_telp" class="form-control" value="<?=$data['no_telp']?>">
                     </div>
                     <div class="form-group">
                         <label class="label" for="">Alamat</label>
-                        <input type="text" name="alamat" class="form-control" value="#">
+                        <input type="text" name="alamat" class="form-control" value="<?=$data['alamat']?>">
                     </div>
                     <div class="form-group">
                         <label class="label" for="">Password</label>
-                        <input type="password" name="password" class="form-control" value="#">
+                        <input type="password" name="password" class="form-control" value="<?=$data['password']?>">
                     </div>
                     
                     <button type="submit" class="btn btn-dark btn-lg btn-block">Simpan</button>

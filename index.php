@@ -47,8 +47,12 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             $anggota = new anggotaModel();
             if ($aksi == 'pinjambuku') {
                 $anggota->daftarbuku();
-            }else if($aksi == 'edit'){
-                require_once("View/Anggota/edit.php");
+            }else if($aksi == 'editProfile'){
+                $anggota->editProfile();
+            }else if($aksi == 'cekEditProfile'){
+                $anggota->cekEditProfile();
+            }else {
+                echo "Method Not Found";
             }
         }else{
             header("location:index.php?page=auth&aksi=loginAnggota");
@@ -60,42 +64,41 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             $admin = new adminModel();
             if ($aksi == 'daftarpeminjam') {
                 $admin->daftarPeminjam();
-            } else if ($aksi == 'view') {
+            } else if ($aksi == 'viewBuku') {
                 $admin->daftarbuku();
-            } else if ($aksi == 'tambahbuku') {
-                $admin->tambah();
+            }else if ($aksi == 'daftarpenerbit'){
+                    $admin->daftarpenerbit();
+            } else if ($aksi == 'tambahBuku') {
+                $admin->tambahBuku();
             }else if ($aksi == 'cekTambahBuku'){
                 $admin->cekTambahBuku();
+            }else if ($aksi == 'editBuku'){
+                $admin->editbuku();
             }else if ($aksi == 'cekEditBuku'){
-                $admin->edit();
-            }
-            else if ($aksi == 'cari'){
-                $admin->cari();
-            }
-            else if ($aksi == 'lihatpinjambuku'){
-                //$admin->cari();
-                require_once("View/admin/lihatpeminjambuku.php");
-            }else if ($aksi == 'daftarpenerbit'){
-                $admin->daftarpenerbit();
-            }else if ($aksi == 'editpenerbit'){
-                //$admin->daftarpenerbit();
-                require_once("View/admin/editpenerbit.php");
-            }else if ($aksi == 'tambahpenerbit'){
-                //$admin->daftarpenerbit();
-                require_once("View/admin/tambahpenerbit.php");
+                $admin->cekEditBuku();
+            }else if ($aksi == 'deleteBuku'){
+                $admin->deleteBuku();
+            }else if ($aksi == 'tambahPenerbit'){
+                $admin->tambahpenerbit();
+            }else if ($aksi == 'cekTambahPenerbit'){
+                $admin->cekTambahPenerbit();
+            }else if ($aksi == 'editPenerbit'){
+                $admin->editpenerbit();
+            }else if ($aksi == 'cekEditPenerbit'){
+                $admin->cekEditPenerbit();
+            }else if ($aksi == 'deletePenerbit'){
+                $admin->deletePenerbit();
+            }else if ($aksi == 'cari'){
+                $admin->cariBuku();
+            }else if ($aksi == 'lihatpinjambuku'){
+                $admin->DaftarPinjamanBuku();
+            }else {
+                echo "Method Not Found";
             }
         }else{
             header("location:index.php?page=auth&aksi=loginAdmin");
         }    
         
-
-
-    }else if ($page == "daftar"){
-        //$buku = new bukuModel();
-        if ($aksi == 'daftarAnggota') {
-            //$buku->daftarbuku();
-            require_once("View/auth/daftar.php");
-        }
     }else {
             echo "Halaman Tidak Ditemukan";
     }

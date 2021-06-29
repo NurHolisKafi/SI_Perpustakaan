@@ -71,10 +71,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            $no=1;
+                            foreach($data as $row) : ?>
                             <tr>
-                                <td class= "label">1.</td>
-                                <td class= "label">BUMI</td>  
-                            </tr>                            
+                                <td class= "label"><?=$no ?></td>
+                                <td class= "label"><?=$row ['judul_buku'] ?></td>  
+                            </tr>  
+                            <?php $no++;
+                            endforeach;?>                          
                         </tbody>
                     </table>
                 </div>

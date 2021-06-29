@@ -51,7 +51,7 @@
                 <h2>Tambah Penerbit</h2>
             </div>
             <div class="card-body">
-                <form action="index.php?page=admin&aksi=tambahpenerbit" method="POST">
+                <form action="index.php?page=admin&aksi=cekTambahPenerbit" method="POST">
                     <div class="form-group">
                         <label class="label">Nama Penerbit : </label>
                         <input type="text" class="form-control" name="nama_penerbit">

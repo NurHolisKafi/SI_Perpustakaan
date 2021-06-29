@@ -45,10 +45,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=tambahbuku">Tambah Buku</a>
+                    <a class="nav-link label" href="index.php?page=admin&aksi=tambahBuku">Tambah Buku</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=admin&aksi=view">Lihat Buku</a>
+                    <a class="nav-link label" href="index.php?page=admin&aksi=viewBuku">Lihat Buku</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link label" href="index.php?page=admin&aksi=daftarpenerbit">Lihat Penerbit</a>
@@ -80,13 +80,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            $no=1;
+                            foreach($data as $row) : ?>
                             <tr>
-                                <td class= "label">1</td>
-                                <td class= "label">Alexander Bambang</td>
-                                <td class= "label">812345678</td>
-                                <td class= "label">Surabaya</td>
-                                <td class= "label"><a href="index.php?page=admin&aksi=lihatpinjambuku" class="btn btn-outline-dark">Lihat</a></td>
+                                <td class= "label"><?=$no?></td>
+                                <td class= "label"><?=$row ['nama'] ?></td>
+                                <td class= "label"><?=$row ['no_telp']?></td>
+                                <td class= "label"><?=$row ['alamat']?></td>
+                                <td class= "label"><a href="index.php?page=admin&aksi=lihatpinjambuku&id_anggota=<?=$row ['id_anggota'] ?>" class="btn btn-outline-dark">Lihat</a></td>
                             </tr>
+                            <?php $no++;
+                            endforeach;?>
                         </tbody>
                     </table>
                 </div>

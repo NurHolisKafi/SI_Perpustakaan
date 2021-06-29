@@ -74,7 +74,7 @@
                  </div>
                 <div class="row">
                 <div class="col-sm-4">
-                <form role="cari" action="index.php?page=admin&aksi=cari" method="GET">
+                <form role="cari" action="index.php?page=admin&aksi=cari" method="POST">
                 <div class="form-group">
                     <label></label>
                 <td><input class="bar" type="text" name="judul_buku" class="form-control"></td> 
@@ -109,10 +109,12 @@
                                 <td class="label"><?=$row['nama_penerbit'] ?></td>
                                 <td class="label"><?=$row['pengarang'] ?></td>
                                 <td>
-                                    <a href="index.php?page=admin&aksi=cekEditBuku">
+                                    <a href="index.php?page=admin&aksi=editBuku&id_buku=<?=$row['id']?>">
                                         <button type="submit" class="btn btn-success btn-lg btn-block">Edit</button>
-                                    </a>                                    
-                                    <button type="submit" class="btn btn-danger btn-lg btn-block">Hapus</button>
+                                    </a>
+                                    <a href="index.php?page=admin&aksi=deleteBuku&id_buku=<?=$row['id']?>">                                    
+                                        <button type="submit" class="btn btn-danger btn-lg btn-block">Hapus</button>
+                                    </a>
                                 </td>                                
                             </tr>
                         <?php $no++;

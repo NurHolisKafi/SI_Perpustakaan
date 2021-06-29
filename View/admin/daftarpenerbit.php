@@ -46,6 +46,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
+                    <a class="nav-link label" href="index.php?page=admin&aksi=tambahpenerbit">Tambah Penerbit</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link label" href="index.php?page=admin&aksi=daftarpeminjam">kembali</a>
                 </li>
             </ul>  
@@ -62,6 +65,7 @@
                 <div class=" card-header">
                     <h2>Daftar Penerbit</h2>
                 </div>
+                
                 <div class="card-body">
                     <table class="table table-striped table-bordered">
                         <thead>
@@ -77,13 +81,14 @@
                         $no=1;
                         foreach($data as $row) :?>
                             <tr>
-                                <td class="label"><?=$no ?></td>
+                                <td class="label"><?=$row['id_penerbit'] ?></td>
                                 <td class="label"><?=$row['nama_penerbit'] ?></td>
                                 <td class="label"><?=$row['tahun_terbit'] ?></td>
                                 <td>
-                                    <a class=" btn btn-success" href="index.php?page=admin&aksi=tambahpenerbit">Tambah</a>
-                                    <a class=" btn btn-success" href="index.php?page=admin&aksi=editpenerbit">Edit</a>
-                                    <button type="submit" class="btn btn-danger btn-lg btn-block">Hapus</button>
+                                    
+                                    <a class=" btn btn-success" href="index.php?page=admin&aksi=editPenerbit&id_penerbit=<?=$row['id_penerbit'] ?>">Edit</a>
+                                    <a class=" btn btn-danger btn-lg btn-block" href="index.php?page=admin&aksi=deletePenerbit&id=<?=$row['id_penerbit'] ?>">Hapus</a>
+                                    
                                 </td>
                                 
                             </tr>

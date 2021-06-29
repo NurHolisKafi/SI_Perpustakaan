@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link label" href="index.php?page=anggota&aksi=edit">Edit Profil</a>
+                    <a class="nav-link label" href="index.php?page=anggota&aksi=editProfile">Edit Profil</a>
                 </li>
             </ul>  
         </div>   
