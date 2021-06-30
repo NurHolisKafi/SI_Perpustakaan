@@ -110,7 +110,7 @@
                                 <td class="label"><?=$row['nama_penerbit'] ?></td>
                                 <td class="label"><?=$row['pengarang'] ?></td>
                                 <td>
-                                    <a href="index.php?page=anggota&aksi=pinjam">
+                                    <a href="index.php?page=anggota&aksi=pinjam&id_buku=<?=$row['id'] ?>">
                                         <button type="submit" class="btn btn-success btn-lg btn-block ">Pinjam</button>
                                     </a>
                                     

@@ -53,11 +53,12 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
                 $anggota->cekEditProfile();
             }else if($aksi == 'pinjam'){
                 $anggota->daftarPetugas();
+            }else if($aksi == 'cekPinjam'){
+                $anggota->pinjamBuku();
             }else if($aksi == 'cari'){
                 $anggota->cariBuku();
             }else if($aksi == 'lihatpinjambuku'){
-                //$anggota->lihatpinjambuku();
-                require_once("View/Anggota/lihatpinjambuku.php");
+                $anggota->viewPinjaman();
             }else {
                 echo "Method Not Found";
             }

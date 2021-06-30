@@ -36,6 +36,28 @@ class anggotaModel{
     }
 
 
+    public function prosesViewPinjaman($id_anggota){
+        $sql = "select a.judul_buku,b.tanggal_peminjaman,b.tanggal_pengembalian from buku as a  
+        join peminjaman_buku as b on b.id_buku = a.id_buku
+        join anggota on anggota.id_anggota = b.id_anggota
+        where anggota.id_anggota = $id_anggota" ;
+        $query = koneksi()->query($sql);
+        $hasil = [];
+        while($data = $query->fetch_assoc()){
+            $hasil[] = $data;
+        }
+        return $hasil;
+    }
+
+
+    public function viewPinjaman(){
+        $id_anggota = $_SESSION['anggota']['id_anggota'];
+        $data = $this->prosesViewPinjaman($id_anggota);
+        extract($data);
+        require_once("View/Anggota/lihatpinjambuku.php");
+    }
+
+
 
     public function prosesEdit($nama, $jenis_kelamin, $tanggal_lahir, $alamat, $password, $no_telp,$id){
         $sql = "update anggota set nama='$nama', jenis_kelamin='$jenis_kelamin', 
@@ -61,7 +83,7 @@ class anggotaModel{
     }
 
     public function getDaftarPetugas(){
-        $sql = " SELECT nama FROM petugas";
+        $sql = " SELECT id_petugas,nama FROM petugas";
         $query = koneksi()->query($sql);
         $hasil = [];
         while($data = $query->fetch_assoc()){
@@ -99,9 +121,31 @@ class anggotaModel{
             </script>";
             //header("location:index.php?page=admin&aksi=viewBuku&pesan=Buku Tidak Ada");
         }
-        
     }
+
+
+    public function prosesPinjamBuku($id_anggota,$id_buku,$id_petugas,$tanggal_peminjaman,$tanggal_pengembalian){
+        $sql = "insert into peminjaman_buku (id_anggota,id_buku,id_petugas,tanggal_peminjaman,tanggal_pengembalian) values
+        ($id_anggota,$id_buku,$id_petugas,'$tanggal_peminjaman','$tanggal_pengembalian')";
+        return koneksi()->query($sql);
+    }
+
+    public function pinjamBuku(){
+        $id_anggota = $_POST['id_anggota'];
+        $id_buku = $_POST['id_buku']; 
+        $id_petugas = $_POST['nama'];
+        $tanggal_peminjaman = $_POST['pinjam_buku'];
+        $tanggal_pengembalian = $_POST['kembalikan_buku'];
+        $data = $this->prosesPinjamBuku($id_anggota,$id_buku,$id_petugas,$tanggal_peminjaman,$tanggal_pengembalian);       
+        if($data){
+            header("location:index.php?page=anggota&aksi=pinjambuku&pesan=Berhasil");
+        }else{
+            header("location:index.php?page=anggota&aksi=pinjam&pesan=Gagal");
+        }
+    }
+
+
 }
 // $tes = new anggotaModel;
-// var_export($tes->get(2));
+// var_export($tes->getLastPeminjaman());
 // die;

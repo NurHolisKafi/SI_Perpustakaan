@@ -18,9 +18,9 @@ class adminModel{
     }
 
     public function prosesDaftarPeminjam($id_petugas){
-        $sql = "select distinct anggota.id_anggota,anggota.nama,anggota.no_telp,anggota.alamat from anggota 
-        join peminjaman_buku on peminjaman_buku.id_anggota = anggota.id_anggota
-        join petugas on petugas.id_petugas = peminjaman_buku.id_petugas
+        $sql = "select distinct a.id_anggota,a.nama,a.no_telp,a.alamat from anggota as a 
+        join peminjaman_buku as b on b.id_anggota = a.id_anggota
+        join petugas on petugas.id_petugas = b.id_petugas
         where petugas.id_petugas = $id_petugas";
         $query = koneksi()->query($sql);
         $hasil = [];
@@ -38,10 +38,10 @@ class adminModel{
     }
 
     public function prosesDaftarPinjamanBuku($id_petugas,$id_anggota){
-        $sql = "select judul_buku from buku  
-        join peminjaman_buku on peminjaman_buku.id_buku = buku.id_buku
-        join petugas on petugas.id_petugas = peminjaman_buku.id_petugas
-        join anggota on anggota.id_anggota = peminjaman_buku.id_anggota
+        $sql = "select a.judul_buku,b.tanggal_peminjaman,b.tanggal_pengembalian from buku as a  
+        join peminjaman_buku as b on b.id_buku = a.id_buku
+        join petugas on petugas.id_petugas = b.id_petugas
+        join anggota on anggota.id_anggota = b.id_anggota
         where petugas.id_petugas = $id_petugas AND anggota.id_anggota = $id_anggota" ;
         $query = koneksi()->query($sql);
         $hasil = [];

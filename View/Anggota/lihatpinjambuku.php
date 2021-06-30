@@ -70,19 +70,19 @@
                                 <th class= "label">Judul Buku</th>
                                 <th class= "label">Tanggal Peminjaman</th>
                                 <th class= "label">Tanggal Pengembalian</th>
-                                <th class= "label">Perpustakaan</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
+                        <?php
                             $no=1;
                             foreach($data as $row) : ?>
                             <tr>
                                 <td class= "label"><?=$no ?></td>
-                                <td class= "label"><?=$row ['judul_buku'] ?></td> 
-                                <td class= "label">13-01-2021</td>
-                                <td class= "label">20-01-2021</td>
-                                <td class= "label">Perpustakaan A</td>
+                                <td class= "label"><?=$row ['judul_buku'] ?></td>  
+                                <td class= "label"><?=$row ['tanggal_peminjaman'] ?></td>
+                                <td class= "label"><?=$row ['tanggal_pengembalian'] ?></td>
+                                
                             </tr>  
                             <?php $no++;
                             endforeach;?>                          

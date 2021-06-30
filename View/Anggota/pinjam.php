@@ -54,7 +54,9 @@
                     <h2>Peminjaman Buku</h2>
                 </div>
                 <div class="card-body">
-                    <form action="index.php?page=anggota&aksi=pinjam" method="POST">
+                    <form action="index.php?page=anggota&aksi=cekPinjam" method="POST">
+                    <input type="hidden" name="id_anggota" value="<?=$_SESSION['anggota']['id_anggota']?>">
+                    <input type="hidden" name="id_buku" value="<?=$_GET['id_buku']?>">
                         <div class="row">
                             <div class="col">
                                 <label class="label" for="">Nama Petugas : </label>
