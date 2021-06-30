@@ -144,7 +144,44 @@ class anggotaModel{
         }
     }
 
+    public function prosesBatalPinjam($id_buku){
+        $sql = "delete from peminjaman_buku where id_buku = $id_buku";
+        return koneksi()->query($sql);
+    }
 
+    public function batalPinjam(){
+        $id_peminjaman = $_GET['id_buku'];
+        if($this->prosesBatalPinjam($id_peminjaman)){
+            echo "<script type='text/javascript'>
+            alert('Buku Batal Di Pinjam');
+            window.location='index.php?page=anggota&aksi=pinjambuku';
+            </script>";
+            //header("location:index.php?page=anggota&aksi=&pesan=Berhasil");
+        }else{
+            
+            //header("location:index.php?page=admin&aksi=viewBuku&pesan=Gagal");
+        }
+    }
+
+    public function prosescekBuku($id_anggota){
+        $sql = "select id_peminjaman from peminjaman_buku where id_anggota = $id_anggota ";
+        $query = koneksi()->query($sql);
+        return $query->fetch_assoc();
+    }
+
+    public function cekBuku(){
+        $id_anggota = $_SESSION['anggota']['id_anggota'];
+        $id_buku = $_GET['id_buku'];
+        if($this->prosescekBuku($id_anggota)){
+            echo "<script type='text/javascript'>
+            alert('Anda Telah Meminjam Buku');
+            window.location='index.php?page=anggota&aksi=pinjambuku';
+            </script>";
+            //header("location:index.php?page=anggota&aksi=pinjambuku");
+        }else{
+            header("location:index.php?page=anggota&aksi=pinjam&id_buku=$id_buku");
+        }
+    }
 }
 // $tes = new anggotaModel;
 // var_export($tes->getLastPeminjaman());

@@ -110,11 +110,13 @@
                                 <td class="label"><?=$row['nama_penerbit'] ?></td>
                                 <td class="label"><?=$row['pengarang'] ?></td>
                                 <td>
-                                    <a href="index.php?page=anggota&aksi=pinjam&id_buku=<?=$row['id'] ?>">
+                                    <a href="index.php?page=anggota&aksi=cekBuku&id_buku=<?=$row['id'] ?>">
                                         <button type="submit" class="btn btn-success btn-lg btn-block ">Pinjam</button>
                                     </a>
                                     
-                                    <button type="submit" class="btn btn-danger btn-lg btn-block">Batal</button>
+                                    <a href="index.php?page=anggota&aksi=batalpinjam&id_buku=<?=$row['id'] ?>">
+                                        <button type="submit" class="btn btn-danger btn-lg btn-block">Batal</button>
+                                    </a>
                                 </td>
                                 
                             </tr>
