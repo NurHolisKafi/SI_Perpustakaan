@@ -46,7 +46,7 @@
 
                 </div>
                 <div class="card-body">
-                    <br><a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-light">Login Admin</a></br>
+                    <!-- <br><a href="index.php?page=auth&aksi=loginAdmin" class="btn btn-light">Login Admin</a></br> -->
                     <br><a href="index.php?page=auth&aksi=loginAnggota" class="btn btn-light">Login Anggota</a></br>
                     <br><a href="index.php?page=auth&aksi=daftarAnggota" class="btn btn-light">Daftar Anggota</a></br>
                 </div>

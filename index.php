@@ -11,6 +11,14 @@ require_once("Model/adminModel.php");
 require_once("Model/anggotaModel.php");
 require_once("Model/bukuModel.php");
 
+/**
+ * Memanggil Controller
+ */
+require_once("controller/authController.php");
+require_once("controller/adminController.php");
+require_once("controller/anggotaController.php");
+require_once("controller/bukuContoller.php");
+
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
@@ -20,7 +28,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     $aksi = $_GET['aksi']; // Aksi Dari setiap page
     
     if ($page == "auth") {
-       $auth = new authModel();
+       $auth = new authController();
         if ($aksi == 'HalamanAwal') { 
             $auth->index();
         }else if ($aksi == 'loginAdmin') {
@@ -44,7 +52,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
     } else if ($page == "anggota"){
         if($_SESSION['role'] == 'anggota'){
-            $anggota = new anggotaModel();
+            $anggota = new anggotaController();
             if ($aksi == 'pinjambuku') {
                 $anggota->daftarbuku();
             }else if($aksi == 'editProfile'){
@@ -73,7 +81,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
     }else if ($page == "admin"){
         if($_SESSION['role']=='admin'){
-            $admin = new adminModel();
+            $admin = new adminController();
             if ($aksi == 'daftarpeminjam') {
                 $admin->daftarPeminjam();
             } else if ($aksi == 'viewBuku') {

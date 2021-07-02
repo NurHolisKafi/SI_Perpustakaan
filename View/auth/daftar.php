@@ -62,7 +62,7 @@
                     </div>
                     <div class="form-group">
                         <label class="label">Tanggal Lahir : </label>
-                        <input type="text" class="form-control" name="tanggal_lahir">
+                        <input type="date" name="tanggal_lahir" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label class="label">No.Telpon : </label>

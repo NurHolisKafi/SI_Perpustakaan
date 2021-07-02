@@ -65,7 +65,7 @@
                     </div>
                     <div class="form-group">
                         <label class="label" for="">Tanggal Lahir</label>
-                        <input type="text" name="tanggal_lahir" class="form-control" value="<?=$data['tanggal_lahir']?>">
+                        <input type="date" name="tanggal_lahir" class="form-control" value="<?=$data['tanggal_lahir']?>">
                     </div>
                     <div class="form-group">
                         <label class="label" for="">No.Telp</label>
