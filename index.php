@@ -9,7 +9,7 @@ require_once("koneksi.php");
 require_once("Model/authModel.php");
 require_once("Model/adminModel.php");
 require_once("Model/anggotaModel.php");
-require_once("Model/bukuModel.php");
+
 
 /**
  * Memanggil Controller
@@ -17,7 +17,7 @@ require_once("Model/bukuModel.php");
 require_once("controller/authController.php");
 require_once("controller/adminController.php");
 require_once("controller/anggotaController.php");
-require_once("controller/bukuContoller.php");
+
 
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
