@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <style>
         body {
-            
+
             background-image: url("assets/image/bg2.png");
             background-size: cover;
         }
+
         .btn {
             width: 320px;
-	        height: 50px;
+            height: 50px;
             font-size: 20px;
             color: #ff6435;
             font-weight: bold;
-	        border-radius: 25px;
+            border-radius: 25px;
             background-color: #170f15;
         }
 
@@ -26,7 +27,7 @@
             background: transparent;
             outline-width: 0px;
             outline: transparent;
-            
+            border: transparent;
         }
 
         h2 {
@@ -40,7 +41,7 @@
     <center>
         <div class="container">
             <div class="card mt-5">
-                <div class="card-header">
+                <div class="card-header" style="border: 0; background: transparent;">
 
                     <h2>Selamat Datang Di Sistem Perpustakaan</h2>
 
